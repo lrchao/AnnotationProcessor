@@ -17,7 +17,7 @@ import javax.lang.model.element.ExecutableElement;
 import javax.lang.model.element.TypeElement;
 import javax.tools.JavaFileObject;
 
-@SupportedAnnotationTypes("com.lrchao.CustomAnnotation")
+@SupportedAnnotationTypes("com.lrchao.annotation.CustomAnnotation")
 @SupportedSourceVersion(SourceVersion.RELEASE_7)
 public class CustomAnnotationProcessor extends AbstractProcessor {
 
@@ -72,7 +72,7 @@ public class CustomAnnotationProcessor extends AbstractProcessor {
 
 
         // for each javax.lang.model.element.Element annotated with the CustomAnnotation
-        for (Element element : roundEnv.getElementsAnnotatedWith(CustomAnnotation.class)) {
+        for (Element element : roundEnv.getElementsAnnotatedWith(com.lrchao.annotation.CustomAnnotation.class)) {
             String objectType = element.getSimpleName().toString();
             // this is appending to the return statement
             builder.append(objectType).append(" says hello1111!\\n");
