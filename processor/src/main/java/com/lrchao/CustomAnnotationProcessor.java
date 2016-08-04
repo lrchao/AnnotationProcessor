@@ -1,5 +1,7 @@
 package com.lrchao;
 
+import com.google.auto.service.AutoService;
+
 import java.io.IOException;
 import java.io.Writer;
 import java.util.Set;
@@ -7,6 +9,7 @@ import java.util.Set;
 import javax.annotation.processing.AbstractProcessor;
 import javax.annotation.processing.Completion;
 import javax.annotation.processing.ProcessingEnvironment;
+import javax.annotation.processing.Processor;
 import javax.annotation.processing.RoundEnvironment;
 import javax.annotation.processing.SupportedAnnotationTypes;
 import javax.annotation.processing.SupportedSourceVersion;
@@ -19,6 +22,7 @@ import javax.tools.JavaFileObject;
 
 @SupportedAnnotationTypes("com.lrchao.annotation.CustomAnnotation")
 @SupportedSourceVersion(SourceVersion.RELEASE_7)
+@AutoService(Processor.class)
 public class CustomAnnotationProcessor extends AbstractProcessor {
 
     /**
